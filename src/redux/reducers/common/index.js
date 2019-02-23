@@ -9,7 +9,8 @@ const initState = {
         isFetchedSuccess : false,
         isFetchedError : false,
         data : null
-    }
+    },
+    isMobileMenuShow: false
 }
 
 export default function commonReducer(state = initState, action){
@@ -46,6 +47,10 @@ export default function commonReducer(state = initState, action){
                 isFetchedError : true,
                 data: null
             }
+        }
+        case c.MOBILE_MENU_HANDLE : return {
+            ...state,
+            isMobileMenuShow: !state.isMobileMenuShow
         }
         default : return state;
     }

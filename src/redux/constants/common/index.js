@@ -9,3 +9,7 @@ export const FETCH_POSTS_ERROR = `${module}/FETCH_POSTS_ERROR`;
 export const FETCH_CATEGORIES = `${module}/FETCH_CATEGORIES`;
 export const FETCH_CATEGORIES_SUCCESS = `${module}/FETCH_CATEGORIES_SUCCESS`;
 export const FETCH_CATEGORIES_ERROR = `${module}/FETCH_CATEGORIES_ERROR`;
+
+
+//
+export const MOBILE_MENU_HANDLE = `${module}/MOBILE_MENU_HANDLE`;

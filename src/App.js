@@ -8,6 +8,7 @@ import Admin from './components/Admin/index';
 import NotFound from './components/NotFound/index';
 import Category from './components/Category/';
 import {Header, Footer} from './components/Common/'; 
+import Aside from './components/Common/components/Aside';
 
 class App extends Component {
   render() {

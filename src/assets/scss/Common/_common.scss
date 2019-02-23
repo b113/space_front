@@ -76,15 +76,17 @@ h4{
 .logo{
     font-size: 22px;
     font-family: 'Permanent Marker' , cursive;
+}
 .menu-container{
     position: sticky;
     top: 0;
     background: #fff;
+    border-bottom: 1px solid #979797;
 }
 
 .header-nav{
     display: flex;
-    padding: 15px;
+    padding: 15px 0;
     justify-content: space-between;
     align-items: center;
     .header-menu{

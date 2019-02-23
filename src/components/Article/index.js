@@ -10,7 +10,7 @@ export default class Article extends Component {
 
   render() {
     return (
-      <div className = "container">
+      <div className = "container main-container">
         <Post />
         <CommentsList />
       </div>

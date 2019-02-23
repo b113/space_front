@@ -15,7 +15,8 @@
     "react-scripts": "2.1.5",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,6 +32,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-    
   ]
 }

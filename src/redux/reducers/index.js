@@ -1,10 +1,6 @@
-const state = {
-    user : {},
-    
-}
+import {combineReducers} from 'redux';
+import commonReducer from './common/';
 
-export default function mainreducer(state ={}, action){
-    switch(action){
-        default : return state;
-    }
-}
+export default combineReducers({
+    common : commonReducer
+})

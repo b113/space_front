@@ -1,0 +1,65 @@
+[
+    {
+        "id" : 0,
+        "title" : "First article",
+        "description": "Some description",
+        "created" : "",
+        "categoryId" : 1
+    },
+    {
+        "id" : 1,
+        "title" : "First article",
+        "description": "Some description",
+        "created" : "",
+        "categoryId" : 1
+    },
+    {
+        "id" : 2,
+        "title" : "First article",
+        "description": "Some description",
+        "created" : "",
+        "categoryId" : 1
+    },
+    {
+        "id" : 3,
+        "title" : "First article",
+        "description": "Some description",
+        "created" : "",
+        "categoryId" : 1
+    },
+    {
+        "id" : 4,
+        "title" : "First article",
+        "description": "Some description",
+        "created" : "",
+        "categoryId" : 1
+    },
+    {
+        "id" : 5,
+        "title" : "First article",
+        "description": "Some description",
+        "created" : "",
+        "categoryId" : 1
+    },
+    {
+        "id" : 6,
+        "title" : "First article",
+        "description": "Some description",
+        "created" : "",
+        "categoryId" : 1
+    },
+    {
+        "id" : 7,
+        "title" : "First article",
+        "description": "Some description",
+        "created" : "",
+        "categoryId" : 1
+    },
+    {
+        "id" : 8,
+        "title" : "First article",
+        "description": "Some description",
+        "created" : "",
+        "categoryId" : 1
+    },
+]

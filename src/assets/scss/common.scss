@@ -3,6 +3,8 @@ $blue-light: rgba(74, 144, 226, 0.5);
 $main: #343460;
 $border-color: #979797;
 
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
 ///media 
 
 $tablet: 1024px;
@@ -11,3 +13,4 @@ $mobile: 767px;
 
 @import "./Common/common";
 @import "./Admin/admin.scss";
+@import "./Index/index";

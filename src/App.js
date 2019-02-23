@@ -8,14 +8,17 @@ import NotFound from './components/NotFound/';
 class App extends Component {
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Index} />
-          <Route path="/admin" component={Admin} />
-          <Route path="/article/:id" component={Article} />
-          <Route path="*" component={NotFound} />
-        </Switch>
-      </Router>
+      <main className='wrap_app'>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Index} />
+            <Route path="/admin" component={Admin} />
+            <Route path="/article/:id" component={Article} />
+            <Route path="/category/:id" component={Category} />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </Router>
+      </main>
     );
   }
 }

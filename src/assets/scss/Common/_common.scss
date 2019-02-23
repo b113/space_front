@@ -40,12 +40,78 @@ img{
     }
 }
 
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
 h2{
-    font-size: 2.25rem;
+    font-size: 36px;
 }
 h3{
-    font-size: 1.5rem;
+    font-size: 24px;
 }
 h4{
-    font-size: 3rem;
+    font-size: 20px;
+}
+
+
+.footer{
+    padding: 25px 0;
+    border-top: 1px solid $border-color;
+    .row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .social-icons{
+        display: flex;
+        div{
+            margin: 0 10px 0 0;
+        }
+    }
+}
+
+.logo{
+    font-size: 22px;
+    font-family: 'Permanent Marker' , cursive;
+.menu-container{
+    position: sticky;
+    top: 0;
+    background: #fff;
+}
+
+.header-nav{
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    .header-menu{
+        display: flex;
+        li{
+            padding: 0 25px;
+            font-size: 26px;
+            position: relative;
+            &:hover{
+                .sub-menu{
+                    display: block;
+                }
+            }
+        }
+        .sub-menu{
+            display: none;
+            position: absolute;
+            background: #fff;
+            min-width: 250px;
+            left: 0;
+            box-shadow: 0px 3px 15px #d2cfcf;
+            padding: 15px 0px;
+            li{
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+        }
+        
+    }
 }

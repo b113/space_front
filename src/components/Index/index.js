@@ -1,16 +1,3 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import Main from './Main';
 
-export default class Index extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
-
-  render() {
-    return (
-      <div>
-        Index
-      </div>
-    )
-  }
-}
+export default Main;

@@ -14,7 +14,7 @@ export default class Article extends Component {
     return (
       <Link to={`/article/${title}`} className='article_item'>
         <div className='article_img_placeholder'>
-            <img src={image} alt={title} />
+            <img src={`https://placehold.it/300x200`} alt={title} />
         </div>
         <h3>{title}</h3>
         <p>{description}</p>

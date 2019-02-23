@@ -7,21 +7,18 @@ import Admin from './components/Admin/index';
 import NotFound from './components/NotFound/index';
 import Category from './components/Category/';
 import {Header, Footer} from './components/Common/'; 
+import AboutUs from './components/About/';
 class App extends Component {
   render() {
     return (
       <main className='wrap_app'>
-
           <Router>
             <Fragment>
-              <div className='menu-container'>
-                <div className='container'>
-                  <Header />
-                </div>
-              </div>
+              <Header />
               <Switch>
                 <Route exact path="/" component={Index} />
-                <Route path="/admin" component={Admin} />
+                <Route exact path="/admin" component={Admin} />
+                <Route path="/about" component={AboutUs}  />
                 <Route path="/article/:id" component={Article} />
                 <Route path="/category/:id" component={Category} />
                 <Route path="*" component={NotFound} />
@@ -29,7 +26,6 @@ class App extends Component {
               <Footer />
             </Fragment>
           </Router>
-  
       </main>
     );
   }

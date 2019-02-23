@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom';
 
@@ -6,7 +6,8 @@ import {connect} from 'react-redux';
 import uuid from 'uuid/v1';
 import {fetchCategories} from '../../../redux/actions/common/';
 
-class Header extends Component {
+
+class Header extends PureComponent {
   static propTypes = {
     dispatch: PropTypes.func,
     categories : PropTypes.object
@@ -23,7 +24,7 @@ class Header extends Component {
     return (
       <div className='header'>
         <div className='header-nav'>
-          <div className='logo'>Space Project</div>
+          <div className='logo'><Link to="/" >Space Project</Link></div>
           <div>
             <ul className='header-menu'>
               <li>

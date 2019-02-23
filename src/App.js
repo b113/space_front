@@ -5,17 +5,23 @@ import Index from './components/Index/index';
 import Article from './components/Article/index';
 import Admin from './components/Admin/index';
 import NotFound from './components/NotFound/index';
+
+import Footer from './components/Common/components/Footer'
+
 class App extends Component {
   render() {
     return (
       <main className='wrap_app'>
         <Router>
-          <Switch>
-            <Route exact path="/" component={Index} />
-            <Route path="/admin" component={Admin} />
-            <Route path="/article/:id" component={Article} />
-            <Route path="*" component={NotFound} />
-          </Switch>
+          <React.Fragment>
+            <Switch>
+              <Route exact path="/" component={Index} />
+              <Route path="/admin" component={Admin} />
+              <Route path="/article/:id" component={Article} />
+              <Route path="*" component={NotFound} />
+            </Switch>
+            <Footer/>
+          </React.Fragment>
         </Router>
       </main>
     );

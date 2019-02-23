@@ -49,3 +49,25 @@ h3{
 h4{
     font-size: 20px;
 }
+
+
+.footer{
+    padding: 25px 0;
+    border-top: 1px solid $border-color;
+    .row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .social-icons{
+        display: flex;
+        div{
+            margin: 0 10px 0 0;
+        }
+    }
+}
+
+.logo{
+    font-size: 22px;
+    font-family: 'Permanent Marker' , cursive;
+}

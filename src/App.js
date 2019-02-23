@@ -1,12 +1,14 @@
 import React, { Component, Fragment } from 'react';
 import './assets/scss/common.scss';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import Index from './components/Index/index';
 import Article from './components/Article/index';
 import Admin from './components/Admin/index';
 import NotFound from './components/NotFound/index';
 import Category from './components/Category/';
 import {Header, Footer} from './components/Common/'; 
+
 class App extends Component {
   render() {
     return (

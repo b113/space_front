@@ -9,6 +9,7 @@ import NotFound from './components/NotFound/index';
 import Category from './components/Category/';
 import {Header, Footer} from './components/Common/'; 
 import AboutUs from './components/About/';
+
 class App extends Component {
   render() {
     return (

@@ -1,16 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-export default class Common extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
-
-  render() {
-    return (
-      <div>
-        Article
-      </div>
-    )
-  }
+export {
+  Header,
+  Footer
 }

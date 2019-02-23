@@ -191,6 +191,12 @@ h4{
             bottom: -8px;
         }
     }
+}
+
+.about-container{
+    max-width: 600px;
+    padding-bottom: 50px;
+    margin: 0 auto;
     @media (max-width: $tablet) {
         display: block;
     }

@@ -1,4 +1,4 @@
-import React, { Component  } from 'react';
+import React, { PureComponent  } from 'react';
 import { FacebookIcon, FacebookShareButton,
         GooglePlusIcon, GooglePlusShareButton,
         TwitterIcon, TwitterShareButton, 
@@ -6,7 +6,7 @@ import { FacebookIcon, FacebookShareButton,
 import { Link } from 'react-router-dom';
 
 
-class Footer extends Component {
+class Footer extends PureComponent {
     render () {
         return(
             <div className="footer">
@@ -24,7 +24,7 @@ class Footer extends Component {
                             </TwitterShareButton>
                         </div>   
                         <Link to="/">
-                            <span className="logo">Space_logo</span>
+                            <span className="logo">Space Project</span>
                         </Link>
                     </div>
                 </div>

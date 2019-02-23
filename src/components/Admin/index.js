@@ -8,11 +8,12 @@ export default class Admin extends Component {
 
   render() {
     return (
-      <div>
-        <form>
-          <div>
-            <label htmlFor="title">Заголовок новости: </label>
-            <input type="text" name="newstitle" id="title" />
+      <div className="container add-news">
+        <h1 className="add-news__header">Добавить новость</h1>
+        <form className="add-news__form">
+          <div className="add-news__title">
+            <label className="add-news__title-label" htmlFor="title">Заголовок: </label>
+            <input className="add-news__title-input" type="text" name="newstitle" id="title" />
           </div>
 
           {/* <select id="categoryselect" name="newscategoryselect">
@@ -21,22 +22,27 @@ export default class Admin extends Component {
             <option value="three">Three</option>
           </select> */}
 
-          <div>
-            <label htmlFor="categorytext">Категория новости:</label>
-            <input type="text" name="newscategorytext" id="categorytext" />
+          <div className="add-news__category">
+            <label className="add-news__category-label" htmlFor="categorytext">Категория:</label>
+            <input className="add-news__category-input" type="text" name="newscategorytext" id="categorytext" />
           </div>
 
-          <div>
-            <label htmlFor="file">Изображение к новости:</label>
+          <div className="add-news__text">
+            <label className="add-news__text-label" htmlFor="text">Текст новости:</label>
+            <textarea className="add-news__text-textarea" name="newstext" id="text" ></textarea>
+          </div>
+
+          <div className="add-news__img">
+            <label className="add-news__img-label" htmlFor="file">Изображение:</label>
             <input type="file" name="newsimage" id="file" />
           </div>
 
-          <div>
-            <label htmlFor="text">Текст новости:</label>
-            <textarea name="newstext" id="text" ></textarea>
-          </div>
+          {/* <div className="add-news__main">
+            <label className="add-news__main-label" htmlFor="main">Сделать главной: </label>
+            <input className="add-news__main-checkbox" type="checkbox" name="newsmain" id="main" />
+          </div> */}
 
-          <input type="submit" value="Добавить новость" />
+          <input className="add-news__submit-btn" type="submit" value="Добавить новость" />
         </form>
       </div>
     )

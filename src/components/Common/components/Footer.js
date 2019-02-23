@@ -1,25 +1,35 @@
-import React, { PureComponent  } from 'react';
+import React, { Component  } from 'react';
+import PropTypes from 'prop-types';
 import { FacebookIcon, FacebookShareButton,
         GooglePlusIcon, GooglePlusShareButton,
         TwitterIcon, TwitterShareButton, 
         } from 'react-share';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
-class Footer extends PureComponent {
+
+class Footer extends Component {
+    
+    static propTypes = {
+        location : PropTypes.object
+    }
+    
     render () {
+        const {location} = this.props;
+        const url =`${window.location.origin}${location.pathname}`;
+    
         return(
             <div className="footer">
                 <div className = "container">
                     <div className="row">
                         <div className="social-icons">
-                            <FacebookShareButton url={window.location.href}>
+                            <FacebookShareButton url={url}>
                                 <FacebookIcon  size={32} round={true} />
                             </FacebookShareButton>
-                            <GooglePlusShareButton url={window.location.href}>
+                            <GooglePlusShareButton url={url}>
                                 <GooglePlusIcon  size={32} round={true} />
                             </GooglePlusShareButton>
-                            <TwitterShareButton url={window.location.href}>
+                            <TwitterShareButton url={url}>
                                 <TwitterIcon  size={32} round={true} />
                             </TwitterShareButton>
                         </div>   
@@ -33,4 +43,4 @@ class Footer extends PureComponent {
     }
 }
 
-export default Footer;
+export default withRouter(Footer);

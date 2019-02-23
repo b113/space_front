@@ -13,7 +13,7 @@ export default class HeroBlock extends Component {
     return (
       <div className='hero_wrapper'>
           <div className='hero_img'>
-            <img src={image} alt={title} />
+            <img src={`https://placehold.it/500x340`} alt={title} />
           </div>
           <div className='hero_text'>
             <h2>{title}</h2>

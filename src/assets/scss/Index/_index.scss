@@ -3,6 +3,7 @@
     flex-direction: row;
     margin-bottom: 60px;
     flex-wrap: wrap;
+    padding: 0 15px;
     .hero_img,
     .hero_text{
         width: 50%;
@@ -45,6 +46,7 @@
     flex-direction: row;
     color:#000;
     .article_item{
+        transition: .7s all;
         padding: 0 15px 25px;
         width: calc(100% / 4);
         @media (max-width: $tablet){
@@ -68,6 +70,12 @@
             img{
                 max-width: 100%;
                 width: 100%;
+            }
+        }
+        &:hover{
+            h3{
+                text-decoration: underline;
+                color: blue;            
             }
         }
     }

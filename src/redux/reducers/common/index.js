@@ -25,11 +25,27 @@ export default function commonReducer(state = initState, action){
         } 
         case c.FETCH_POSTS_ERROR : return {
             ...state,
-            categories : {
+            articles : {
                 isFetchedSuccess : false,
                 isFetchedError : true,
                 data : null
             } 
+        }
+        case c.FETCH_CATEGORIES_SUCCESS : return {
+            ...state,
+            categories : {
+                isFetchedSuccess : true,
+                isFetchedError : false,
+                data: action.payload
+            }
+        }
+        case c.FETCH_CATEGORIES_ERROR : return {
+            ...state,
+            categories : {
+                isFetchedSuccess : false,
+                isFetchedError : true,
+                data: null
+            }
         }
         default : return state;
     }

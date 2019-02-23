@@ -40,6 +40,12 @@ img{
     }
 }
 
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
 h2{
     font-size: 36px;
 }
@@ -48,4 +54,44 @@ h3{
 }
 h4{
     font-size: 20px;
+}
+
+.menu-container{
+    position: sticky;
+    top: 0;
+    background: #fff;
+}
+
+.header-nav{
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    .header-menu{
+        display: flex;
+        li{
+            padding: 0 25px;
+            font-size: 26px;
+            position: relative;
+            &:hover{
+                .sub-menu{
+                    display: block;
+                }
+            }
+        }
+        .sub-menu{
+            display: none;
+            position: absolute;
+            background: #fff;
+            min-width: 250px;
+            left: 0;
+            box-shadow: 0px 3px 15px #d2cfcf;
+            padding: 15px 0px;
+            li{
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+        }
+        
+    }
 }

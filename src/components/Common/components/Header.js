@@ -5,9 +5,16 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import uuid from 'uuid/v1';
 import {fetchCategories} from '../../../redux/actions/common/';
+import {mobileMenuHandle} from '../../../redux/actions/common/';
+import Aside from './Aside';
 
 
 class Header extends PureComponent {
+  constructor() {
+    super();
+
+    this.mobileMenuHandle = this.mobileMenuHandle.bind(this);
+  }
   static propTypes = {
     dispatch: PropTypes.func,
     categories : PropTypes.object
@@ -18,9 +25,14 @@ class Header extends PureComponent {
     dispatch(fetchCategories());
   }
 
-  render() {
-    const {categories} = this.props;
+  mobileMenuHandle() {
+    const {dispatch} = this.props;
 
+    dispatch(mobileMenuHandle());
+  }
+
+  render() {
+    const {categories, isMobileMenuShow} = this.props;
     return (
       <div className='header'>
         <div className='header-nav'>
@@ -46,15 +58,19 @@ class Header extends PureComponent {
               </li>
             </ul>
           </div>
+          <button className="burger" onClick={this.mobileMenuHandle}>
+            <span></span>
+          </button>
         </div>
-
+        {isMobileMenuShow && <Aside/>}
       </div>
     )
   }
 }
 export default connect(    
     store => ({
-        categories : store.common.categories
+        categories : store.common.categories,
+        isMobileMenuShow: store.common.isMobileMenuShow
     }),
     dispatch => ({dispatch})
 )(Header)

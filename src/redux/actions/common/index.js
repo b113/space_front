@@ -2,7 +2,8 @@ import {
     FETCH_POSTS_SUCCESS, 
     FETCH_POSTS_ERROR, 
     FETCH_CATEGORIES_SUCCESS, 
-    FETCH_CATEGORIES_ERROR } from '../../constants/common/';
+    FETCH_CATEGORIES_ERROR,
+    MOBILE_MENU_HANDLE } from '../../constants/common/';
 import axios from 'axios';
 
 //Fetch posts
@@ -45,5 +46,11 @@ export const fetchCategoriesError = (error) => {
     return {
         type : FETCH_CATEGORIES_ERROR,
         error
+    }
+}
+
+export const mobileMenuHandle = () => {
+    return {
+        type: MOBILE_MENU_HANDLE,
     }
 }

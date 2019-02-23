@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import uuid from 'uuid/v1';
 import {fetchCategories} from '../../../redux/actions/common/';
+import SignupLogin from '../../SignupLogin';
 
 
 class Header extends PureComponent {
@@ -47,7 +48,6 @@ class Header extends PureComponent {
             </ul>
           </div>
         </div>
-
       </div>
     )
   }

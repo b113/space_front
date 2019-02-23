@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 export default class Admin extends Component {
   static propTypes = {
     title: PropTypes.string,
+    category: PropTypes.string,
+    text: PropTypes.string,
   }
 
   state = {

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 export default class Admin extends Component {
   static propTypes = {
     title: PropTypes.string,
+    category: PropTypes.string,
+    text: PropTypes.string,
   }
 
   state = {
@@ -31,7 +33,7 @@ export default class Admin extends Component {
   }
 
   handleImageChange = (event) => {
-    this.setState({ image: event.target.files[0] });
+    this.setState({ image: event.target.files });
   }
 
   render() {
@@ -63,7 +65,7 @@ export default class Admin extends Component {
 
           <div className="add-news__img">
             <label className="add-news__img-label" htmlFor="file">Изображение:</label>
-            <input type="file" name="newsimage" id="file" onChange={this.handleImageChange} />
+            <input type="file" multiple name="newsimage" id="file" onChange={this.handleImageChange} />
           </div>
 
           {/* <div className="add-news__main">

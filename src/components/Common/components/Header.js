@@ -4,17 +4,18 @@ import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import uuid from 'uuid/v1';
-import {fetchCategories, mobileMenuHandle} from '../../../redux/actions/common/';
+import {fetchCategories, mobileMenuHandle,} from '../../../redux/actions/common/';
 import Aside from './Aside';
 import SignupLogin from '../../SignupLogin';
 import Modal from "react-responsive-modal";
-
+import {logout} from '../../../redux/actions/user';
 
 class Header extends PureComponent {
 
   static propTypes = {
     dispatch: PropTypes.func,
-    categories: PropTypes.object
+    categories: PropTypes.object,
+    isSuccessLogin: PropTypes.bool
   }
 
   state = {
@@ -39,8 +40,13 @@ class Header extends PureComponent {
     dispatch(mobileMenuHandle());
   }
 
+  logoutHandle = () => {
+    const {dispatch} = this.props;
+    dispatch(logout());
+  }
+
   render() {
-    const { categories, isMobileMenuShow } = this.props;
+    const { categories, isMobileMenuShow, isSuccessLogin } = this.props;
     const { open } = this.state;
     return (
       <div className='header'>
@@ -64,26 +70,26 @@ class Header extends PureComponent {
                     <Link to='/about'>About</Link>
                   </li>
                   <li>
-                    <Link onClick={this.onOpenModal} to="#">Sign Up/Sign In</Link>
-                  </li>
+                  {
+                  !isSuccessLogin 
+                    ? <Link onClick={this.onOpenModal} to="#">Sign Up/Sign In</Link> 
+                    : <Link onClick={this.logoutHandle} to="#">Logout</Link>
+                }
+              </li>
+                  
                 </ul>
-                <button className="burger" onClick={this.mobileMenuHandle}>
-                      <span></span>
-                </button>
-              </div>
-            </div>
+              
+            
+          </div>
+          <button className="burger" onClick={this.mobileMenuHandle}>
+            <span></span>
+          </button>
         </div>
-<<<<<<< HEAD
-            {isMobileMenuShow && <Aside/>}
-            <Modal open={open} onClose={this.onCloseModal} center>
-              <SignupLogin />
-            </Modal>
-=======
         {isMobileMenuShow && <Aside/>}
         <Modal open={open} onClose={this.onCloseModal} center>
           <SignupLogin cancelCallback={this.onCloseModal} />
         </Modal>
->>>>>>> da2dad51ffc662db977869a7b90c67f9dfc3f139
+      </div>
       </div>
     )
   }
@@ -91,7 +97,8 @@ class Header extends PureComponent {
 export default connect(    
     store => ({
         categories : store.common.categories,
-        isMobileMenuShow: store.common.isMobileMenuShow
+        isMobileMenuShow: store.common.isMobileMenuShow,
+        isSuccessLogin: store.user.isSuccessLogin
     }),
     dispatch => ({dispatch})
 )(Header)

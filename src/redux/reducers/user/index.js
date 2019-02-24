@@ -34,6 +34,11 @@ export default function userReducer(state = initState, action){
 					isErrorRegister: true,
 					errorRegisterMessage: action.payload,
 				}
+				case c.LOGOUT: return {
+					...state,
+					isSuccessRegister : false,
+					isSuccessLogin: false
+				}
         default: return state;
     }
 }

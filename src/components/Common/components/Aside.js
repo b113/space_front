@@ -42,8 +42,10 @@ class Aside extends PureComponent {
                         <ul className='sub-menu'>
                             { categories.data && 
                             categories.data.length > 0 &&
-                            categories.data.map(el => <li key={uuid()}>
-                                <Link to={`/category/${el.name}`}>{el.name}</Link>
+                            categories.data.map(el => <li 
+                                onClick={this.handlerShow}
+                                key={uuid()}>
+                                <Link to={`/category/${el}`}>{el}</Link>
                             </li>)
                             }
                         </ul>

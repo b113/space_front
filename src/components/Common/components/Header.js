@@ -44,37 +44,46 @@ class Header extends PureComponent {
     const { open } = this.state;
     return (
       <div className='header'>
+        <div className="container">
         <div className='header-nav'>
-          <div className='logo'><Link to="/" >Space Project</Link></div>
-          <div>
-            <ul className='header-menu'>
-              <li>
-                Category
-                <ul className='sub-menu'>
-                  {categories.data &&
-                    categories.data.length > 0 &&
-                    categories.data.map(el => <li key={uuid()}>
-                      <Link to={`/category/${el.name}`}>{el.name}</Link>
-                    </li>)
-                  }
+              <div className='logo'><Link to="/" >Space Project</Link></div>
+              <div>
+                <ul className='header-menu'>
+                  <li>
+                    Category
+                    <ul className='sub-menu'>
+                      {categories.data &&
+                        categories.data.length > 0 &&
+                        categories.data.map(el => <li key={uuid()}>
+                          <Link to={`/category/${el}`}>{el}</Link>
+                        </li>)
+                      }
+                    </ul>
+                  </li>
+                  <li>
+                    <Link to='/about'>About</Link>
+                  </li>
+                  <li>
+                    <Link onClick={this.onOpenModal} to="#">Sign Up/Sign In</Link>
+                  </li>
                 </ul>
-              </li>
-              <li>
-                <Link to='/about'>About</Link>
-              </li>
-              <li>
-                <Link onClick={this.onOpenModal} to="#">Sign Up/Sign In</Link>
-              </li>
-            </ul>
-          </div>
-          <button className="burger" onClick={this.mobileMenuHandle}>
-            <span></span>
-          </button>
+                <button className="burger" onClick={this.mobileMenuHandle}>
+                      <span></span>
+                </button>
+              </div>
+            </div>
         </div>
+<<<<<<< HEAD
+            {isMobileMenuShow && <Aside/>}
+            <Modal open={open} onClose={this.onCloseModal} center>
+              <SignupLogin />
+            </Modal>
+=======
         {isMobileMenuShow && <Aside/>}
         <Modal open={open} onClose={this.onCloseModal} center>
           <SignupLogin cancelCallback={this.onCloseModal} />
         </Modal>
+>>>>>>> da2dad51ffc662db977869a7b90c67f9dfc3f139
       </div>
     )
   }

@@ -26,7 +26,7 @@ class Main extends PureComponent {
   render() {
     const {articles} = this.props;
     const {from} = this.state;
-    console.log(articles)
+
     const lastArticle = articles.data && articles.data.slice(from,-1)[0];
     return (
       <div className='main_page'> 

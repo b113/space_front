@@ -73,7 +73,7 @@ class Header extends PureComponent {
         </div>
         {isMobileMenuShow && <Aside/>}
         <Modal open={open} onClose={this.onCloseModal} center>
-          <SignupLogin />
+          <SignupLogin cancelCallback={this.onCloseModal} />
         </Modal>
       </div>
     )

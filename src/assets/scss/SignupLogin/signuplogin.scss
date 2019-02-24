@@ -1,0 +1,30 @@
+@import "./signup";
+@import "./login";
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+}
+
+.nav-modal {
+  margin-bottom: 35px;
+  &__link {
+    color: gray;
+    margin-right: 25px;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &__link_active {
+    border-bottom: solid 1px #979797;
+    color: #000;
+  }
+}

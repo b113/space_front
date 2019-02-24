@@ -60,11 +60,11 @@ class Header extends PureComponent {
                   </li>
                 </ul>
               </div>
+              <button className="burger" onClick={this.mobileMenuHandle}>
+                <span></span>
+              </button>
             </div>
           </div>
-          <button className="burger" onClick={this.mobileMenuHandle}>
-            <span></span>
-          </button>
         </div>
         {isMobileMenuShow && <Aside/>}
       </div>

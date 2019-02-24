@@ -98,6 +98,7 @@ h4{
             padding: 0 25px;
             font-size: 26px;
             position: relative;
+            cursor: pointer;
             &:hover{
                 .sub-menu{
                     display: block;
@@ -190,6 +191,9 @@ h4{
         &:after{
             bottom: -8px;
         }
+    }
+    @media (max-width: $tablet){
+        display: block;
     }
 }
 

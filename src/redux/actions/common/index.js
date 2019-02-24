@@ -8,18 +8,20 @@ import {
     FETCH_POSTS_BY_ID_SUCCESS,
     FETCH_POSTS_BY_ID_ERROR} from '../../constants/common/';
 import axios from 'axios';
+// https://swapi.co/api/starships/
 
 //Fetch posts
 export const fetchPosts = () => {
-    return dispatch => axios.get('https://swapi.co/api/starships/')
-        .then(articles => dispatch(fetchPostsSuccess(articles)))
-        .catch(error => dispatch(error))
+    return dispatch => axios.get('http://54.37.125.178:8081/articles/list/10')
+        .then(articles => {dispatch(fetchPostsSuccess(articles.data))
+            }) 
+        .catch(error => dispatch(error.message))
 }
 
-export const fetchPostsSuccess = ({data}) => {
+export const fetchPostsSuccess = (data) => {
     return {
         type : FETCH_POSTS_SUCCESS,
-        payload : data.results
+        payload : data
     }
 }
 

@@ -26,6 +26,7 @@ class Main extends PureComponent {
   render() {
     const {articles} = this.props;
     const {from} = this.state;
+    console.log(articles)
     const lastArticle = articles.data && articles.data.slice(from,-1)[0];
     return (
       <div className='main_page'> 
@@ -33,9 +34,9 @@ class Main extends PureComponent {
           <div className='container'>
               {lastArticle && 
                   <HeroBlock 
-                      title={lastArticle.name} 
-                      description={lastArticle.model}
-                      image={lastArticle.model} 
+                      title={lastArticle.title} 
+                      description={lastArticle.content}
+                      image={lastArticle.urlPicture} 
                   />
               }
               <div className="article_wrap">
@@ -45,9 +46,9 @@ class Main extends PureComponent {
                   articles.data.map((el)=> 
                       <Article 
                           key={uuid()} 
-                          title={el.name} 
-                          description={el.model}
-                          image={el.model}
+                          title={el.title} 
+                          description={el.content}
+                          image={el.urlPicture}
                       />)
               }
               </div>

@@ -14,16 +14,23 @@ class Category extends Component {
     dispatch(fetchPostsById(location.pathname.split('/')[2]));
   }
 
-  componentWillReceiveProps() {
-    const { history , location } = this.props;
+  componentDidUpdate(prevProps) {
+    const { match: { params: { id } } } = this.props;
+    const { id: idPrev } = prevProps.match.params;
 
-    console.log(history)
+    const { dispatch , location } = this.props;
+    
+
+    if (id !== idPrev) {
+      dispatch(fetchPostsById(location.pathname.split('/')[2]));
+    }
   }
+
 
   render() {
     
     const { categoriesById, location , dispatch } = this.props;
-    
+    console.log(categoriesById)
     return (
       <div className="container">
         <div className="article_wrap">

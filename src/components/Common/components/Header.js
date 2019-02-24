@@ -4,18 +4,14 @@ import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import uuid from 'uuid/v1';
-import {fetchCategories, mobileMenuHandle} from '../../../redux/actions/common/';;
+import {fetchCategories, mobileMenuHandle} from '../../../redux/actions/common/';
 import Aside from './Aside';
 import SignupLogin from '../../SignupLogin';
 import Modal from "react-responsive-modal";
 
 
 class Header extends PureComponent {
-  constructor() {
-    super();
 
-    this.mobileMenuHandle = this.mobileMenuHandle.bind(this);
-  }
   static propTypes = {
     dispatch: PropTypes.func,
     categories: PropTypes.object
@@ -38,8 +34,13 @@ class Header extends PureComponent {
     dispatch(fetchCategories());
   }
 
+  mobileMenuHandle = () => {
+    const {dispatch} = this.props;
+    dispatch(mobileMenuHandle());
+  }
+
   render() {
-    const { categories } = this.props;
+    const { categories, isMobileMenuShow } = this.props;
     const { open } = this.state;
     return (
       <div className='header'>

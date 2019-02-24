@@ -19,7 +19,6 @@ class Login extends Component {
     const {loginUserName, loginPassword} = this.state;
     const {dispatch, cancelCallback} = this.props;
 
-    console.log(loginUserName, loginPassword)
     dispatch(requstedLogin({
       login : loginUserName, 
       password : loginPassword,

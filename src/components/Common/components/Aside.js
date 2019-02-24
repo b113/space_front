@@ -14,8 +14,8 @@ class Aside extends PureComponent {
         categories : PropTypes.object
     }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.handlerShow = this.handlerShow.bind(this);
     }
     
@@ -32,7 +32,7 @@ class Aside extends PureComponent {
     
     render() {
         const {categories, isMobileMenuShow} = this.props;
-
+        console.log(this.props)
         return (
         <aside className={`aside ${!isMobileMenuShow ? "open" : "" }`} onClick={this.handlerShow}>
             <div className="aside-menu" onClick={(e) => e.stopPropagation()}>
@@ -52,9 +52,6 @@ class Aside extends PureComponent {
                     </li>
                     <li>
                         <Link to='/about'>About</Link>
-                    </li>
-                    <li>
-                        <Link to="#">Sign Up/Sign In</Link>
                     </li>
                 </ul>
                 <div className="close" onClick={this.handlerShow}>

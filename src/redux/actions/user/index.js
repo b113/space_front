@@ -5,7 +5,7 @@ export const requstedLogin = ({login, password, cancelCallback}) => {
 
     return dispatch => axios.post('http://54.37.125.178:8081/login', {login, password})
         .then((data) => { 
-            if(data.status !== 201 || data.status !== 200){
+            if(data.status != 200){
                 throw {
                     message : 'Ошибка логина'
                 }
@@ -14,8 +14,7 @@ export const requstedLogin = ({login, password, cancelCallback}) => {
             cancelCallback();
         })
         .catch(error => {
-            const {response : {data}} = error;
-            dispatch(requstedLoginError(data.errorMessage ? data.errorMessage : error.message))
+            dispatch(requstedLoginError(error.message))
         })
 }
 

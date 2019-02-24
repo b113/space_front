@@ -5,7 +5,7 @@ export const requstedLogin = ({login, password, cancelCallback}) => {
 
     return dispatch => axios.post('http://54.37.125.178:8081/login', {login, password})
         .then((data) => { 
-            if(data.status !== 200){
+            if(data.status != 200){
                 throw {
                     message : 'Ошибка логина'
                 }

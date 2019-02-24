@@ -45,6 +45,17 @@
     background-color: #fff;
     color: #4a90e2;
   }
+  &--disabled {
+    background-color: lightgray;
+    border: solid 1px lightgray;
+    color: #fff;
+    cursor: default;
+    &:hover {
+      background-color: lightgray;
+      border: solid 1px lightgray;
+      color: #fff;
+    }
+  }
 }
 
 .signInForm__submitBtn_disabled {

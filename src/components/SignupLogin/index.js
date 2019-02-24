@@ -5,7 +5,7 @@ import Signup from './Signup'
 
 export default class SignupLogin extends Component {
   static propTypes = {
-    prop: PropTypes
+    mainTab: PropTypes.bool
   }
 
   state = {
@@ -19,10 +19,9 @@ export default class SignupLogin extends Component {
   render() {
     const { mainTab } = this.state;
     return (
-
       <div className="modal-form">
         <nav className="nav-modal">
-          <button onClick={() => this.tabsHandler(true)} className={`nav-modal__link ${mainTab ? 'nav-modal__link_active' : ''}`} activeClassName="nav-modal__link_active">Login</button>
+          <button onClick={() => this.tabsHandler(true)} className={`nav-modal__link ${mainTab ? 'nav-modal__link_active' : ''}`} >Login</button>
           <button onClick={() => this.tabsHandler(false)} className={`nav-modal__link ${!mainTab ? 'nav-modal__link_active' : ''}`}>Sign Up</button>
         </nav>
         {
@@ -33,7 +32,6 @@ export default class SignupLogin extends Component {
             )
         }
       </div>
-
     )
   }
 }

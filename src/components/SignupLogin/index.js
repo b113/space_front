@@ -5,7 +5,8 @@ import Signup from './Signup'
 
 export default class SignupLogin extends Component {
   static propTypes = {
-    mainTab: PropTypes.bool
+    mainTab: PropTypes.bool,
+    cancelCallback: PropTypes.func
   }
 
   state = {
@@ -18,6 +19,7 @@ export default class SignupLogin extends Component {
 
   render() {
     const { mainTab } = this.state;
+    const {cancelCallback} = this.props;
     return (
       <div className="modal-form">
         <nav className="nav-modal">
@@ -26,10 +28,10 @@ export default class SignupLogin extends Component {
         </nav>
         {
           mainTab ? (
-            <Login />
+            <Login cancelCallback={cancelCallback} />
           ) : (
-              <Signup />
-            )
+            <Signup cancelCallback={cancelCallback} />
+          )
         }
       </div>
     )

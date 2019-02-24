@@ -10,6 +10,11 @@ const initState = {
         isFetchedError : false,
         data : null
     },
+    categoriesById : {
+        isFetchedSuccess : false,
+        isFetchedError : false,
+        data : null
+    },
     isMobileMenuShow: false
 }
 
@@ -43,6 +48,22 @@ export default function commonReducer(state = initState, action){
         case c.FETCH_CATEGORIES_ERROR : return {
             ...state,
             categories : {
+                isFetchedSuccess : false,
+                isFetchedError : true,
+                data: null
+            }
+        }
+        case c.FETCH_POSTS_BY_ID_SUCCESS : return {
+            ...state,
+            categoriesById : {
+                isFetchedSuccess : false,
+                isFetchedError : true,
+                data: action.payload
+            }
+        }
+        case c.FETCH_POSTS_BY_ID_ERROR : return {
+            ...state,
+            categoriesById : {
                 isFetchedSuccess : false,
                 isFetchedError : true,
                 data: null

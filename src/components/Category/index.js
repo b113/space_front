@@ -1,16 +1,53 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux';
+import uuid from 'uuid/v1';
+import Article from '../Index/components/Article';
+import { withRouter } from 'react-router-dom';
+import {fetchPostsById} from '../../redux/actions/common/';
 
-export default class Category extends Component {
-  static propTypes = {
-    prop: PropTypes
+class Category extends Component {
+
+
+  componentDidMount() {
+    const { dispatch , location } = this.props;
+    dispatch(fetchPostsById(location.pathname.split('/')[2]));
+  }
+
+  componentWillReceiveProps() {
+    const { history , location } = this.props;
+
+    console.log(history)
   }
 
   render() {
+    
+    const { categoriesById, location , dispatch } = this.props;
+    
     return (
       <div className="container">
-        Category
+        <div className="article_wrap">
+              {
+                  categoriesById.data && 
+                  categoriesById.data.length > 0 && 
+                  categoriesById.data.map((el)=> 
+                      <Article 
+                          key={uuid()} 
+                          title={el.title} 
+                          description={el.content}
+                          image={el.urlPicture}
+                      />)
+              }
+        </div>
       </div>
     )
   }
 }
+
+
+export default withRouter(connect(
+  store => ({
+    categoriesById : store.common.categoriesById,
+  }),
+  dispatch => ({dispatch})
+)(Category));
